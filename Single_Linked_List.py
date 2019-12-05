@@ -3,18 +3,43 @@ class Node:
         self.info = value
         self.link = None
 
+
 class SingleLinkedList:
     def __init__(self):
         self.start = Node
 
-    def display_list(self):
-        pass
+    def display_list(self):  # for displaying the list
+        if self.start is Node:
+            print("List is empty")
+            return
+        else:
+            print("List is :   ")
+            p = self.start
+            while p is not Node:
+                print(p.info, " ", end="")
+                p = p.link
+            print()
 
-    def count_nodes(self):
-        pass
+    def count_nodes(self):  # For counting the element in the list
+        p = self.start
+        n = 0
+        while p is not Node:
+            n += 1
+            p = p.link
+        print(f"The number of nodes in the list {n}")
 
-    def search(self, x):
-        pass
+    def search(self, x): # For Searching the node in the list
+        p = self.start
+        position = 1
+        while p is not Node:
+            if p.info == x:
+                print(f"{x} is at position {position}")
+                return True
+            position += 1
+            p = p.link
+        else:
+            print(f"{x} not found in list")
+            return False
 
     def insert_in_beninning(self, data):
         pass
@@ -75,7 +100,6 @@ class SingleLinkedList:
 
     def _divide_list(self, p):
         pass
-
 
     #####################################################
 
