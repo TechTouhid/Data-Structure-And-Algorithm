@@ -6,16 +6,16 @@ class Node:
 
 class SingleLinkedList:
     def __init__(self):
-        self.start = Node
+        self.start = None
 
     def display_list(self):  # for displaying the list
-        if self.start is Node:
+        if self.start is None:
             print("List is empty")
             return
         else:
             print("List is :   ")
             p = self.start
-            while p is not Node:
+            while p is not None:
                 print(p.info, " ", end="")
                 p = p.link
             print()
@@ -23,7 +23,7 @@ class SingleLinkedList:
     def count_nodes(self):  # For counting the element in the list
         p = self.start
         n = 0
-        while p is not Node:
+        while p is not None:
             n += 1
             p = p.link
         print(f"The number of nodes in the list {n}")
@@ -31,7 +31,7 @@ class SingleLinkedList:
     def search(self, x): # For Searching the node in the list
         p = self.start
         position = 1
-        while p is not Node:
+        while p is not None:
             if p.info == x:
                 print(f"{x} is at position {position}")
                 return True
@@ -41,14 +41,29 @@ class SingleLinkedList:
             print(f"{x} not found in list")
             return False
 
-    def insert_in_beninning(self, data):
-        pass
+    def insert_in_beginning(self, data): # Insert node at the beginning of the list
+        temp = Node(data)
+        temp.link = self.start
+        self.start = temp
 
-    def insert_at_end(self, data):
-        pass
+    def insert_at_end(self, data): # insert a node at the end of the list
+        temp = Node(data)
+        if self.start is None:
+            self.start = temp
+            return
+
+        p = self.start
+        while p.link is not None:
+            p = p.link
+        p.link = temp
 
     def create_list(self):
-        pass
+        n = int(input("Enter the number of the nodes: "))
+        if n == 0:
+            return
+        for i in range(n):
+            data = int(input("Enter the element to be inserted: "))
+            self.insert_at_end(data)
 
     def insert_after(self, data, x):
         pass
@@ -113,7 +128,7 @@ while True:
     print("1. Display List")
     print("2. Count The Number Of Nodes")
     print("3. Search For An Element")
-    print("4. Insert In")
+    print("4. Insert in the beginning of the list")
     print("5. Insert a node at the end of the list")
     print("6. Insert a node after a specified node")
     print("7. Insert a node before a specified node")
@@ -131,7 +146,7 @@ while True:
     print("19. Quit")
     print("----------------------------------------")
 
-    option = int(input("Enter Your Choice"))
+    option = int(input("Enter Your Choice: "))
     if option == 1:
         List.display_list()
 
@@ -144,7 +159,7 @@ while True:
 
     elif option == 4:
         data = int(input("Enter The Element to be inserted : "))
-        List.insert_in_beninning(data)
+        List.insert_in_beginning(data)
 
     elif option == 5:
         data = int(input("Enter The Element to be inserted : "))
