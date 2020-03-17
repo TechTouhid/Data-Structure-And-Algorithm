@@ -28,7 +28,7 @@ class SingleLinkedList:
             p = p.link
         print(f"The number of nodes in the list {n}")
 
-    def search(self, x): # For Searching the node in the list
+    def search(self, x):  # For Searching the node in the list
         p = self.start
         position = 1
         while p is not None:
@@ -41,12 +41,12 @@ class SingleLinkedList:
             print(f"{x} not found in list")
             return False
 
-    def insert_in_beginning(self, data): # Insert node at the beginning of the list
-        temp = Node(data)
+    def insert_in_beginning(self, data):  # Insert node at the beginning of the list
+        temp = Node(data)  # created a object form the Node class
         temp.link = self.start
         self.start = temp
 
-    def insert_at_end(self, data): # insert a node at the end of the list
+    def insert_at_end(self, data):  # insert a node at the end of the list
         temp = Node(data)
         if self.start is None:
             self.start = temp
@@ -66,13 +66,63 @@ class SingleLinkedList:
             self.insert_at_end(data)
 
     def insert_after(self, data, x):
-        pass
+        p = self.start
+        # Af first need to search the element of the list
+        while p is not None:
+            if p.info == x:
+                break
+            p = p.link
+        if p is None:
+            print(f'{x} not present in the list')
+        else:
+            temp = Node(data)
+            temp.link = p.link
+            p.link = temp
 
     def insert_before(self, data, x):
-        pass
+        # if list is empty
+        if self.start is None:
+            print('List is empty')
+            return
+        # if x is in first node, new node is to be inserted before first node
+        if x == self.start.info:
+            temp = Node(data)
+            temp.link = self.start
+            self.start = temp
+            return
+        # Find the reference to predecessor of node containing x
+        p = self.start
+        while p.link is not None:
+            if p.link.info == x:
+                break
+            p = p.link
 
-    def insert_at_position(self, data, x):
-        pass
+        if p is None:
+            print(f'{x} is not in the list')
+
+        else:
+            temp = Node(data)
+            temp.link = p.link
+            p.link = temp
+
+    def insert_at_position(self, data, k):
+        if k == 1:
+            temp = Node(data)
+            temp.link = self.start
+            self.start = temp
+            return
+        p = self.start
+        i = 1
+        while i < k - 1 and p is not None:  # find a  reference to k-1 node
+            p = p.link
+            i += 1
+
+        if p is None:
+            print(f"You can insert only upto position {k}")
+        else:
+            temp = Node(data)
+            temp.link = p.link
+            p.link = temp
 
     def delete_node(self, x):
         pass
@@ -167,13 +217,18 @@ while True:
 
     elif option == 6:
         data = int(input("Enter The Element to be inserted : "))
-        x = data = int(input("Enter The Element after which to insert : "))
-        List.insert_before(data, x)
+        x = int(input("Enter The Element after which to insert : "))
+        List.insert_after(data, x)
 
     elif option == 7:
         data = int(input("Enter The Element to be inserted : "))
         x = int(input("Enter The Element before which to insert : "))
         List.insert_before(data, x)
+
+    elif option == 8:
+        data = int(input("Enter The Element to be inserted : "))
+        k = int(input("Enter The kth Element which to be insert : "))
+        List.insert_at_position(data, k)
 
     elif option == 9:
         List.delete_first_node()
