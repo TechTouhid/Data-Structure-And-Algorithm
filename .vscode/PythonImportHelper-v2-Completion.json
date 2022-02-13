@@ -1,0 +1,110 @@
+[
+    {
+        "label": "string_val",
+        "kind": 5,
+        "importPath": "Python.BasicProblems.PalindromeNumber",
+        "description": "Python.BasicProblems.PalindromeNumber",
+        "peekOfCode": "string_val = '1211'\nstr_temp = ''\nfor i in range(len(string_val) -1, -1, -1):\n    str_temp += string_val[i]\nif string_val == str_temp:\n    print(True)\nelse:\n    print(False)",
+        "detail": "Python.BasicProblems.PalindromeNumber",
+        "documentation": {}
+    },
+    {
+        "label": "str_temp",
+        "kind": 5,
+        "importPath": "Python.BasicProblems.PalindromeNumber",
+        "description": "Python.BasicProblems.PalindromeNumber",
+        "peekOfCode": "str_temp = ''\nfor i in range(len(string_val) -1, -1, -1):\n    str_temp += string_val[i]\nif string_val == str_temp:\n    print(True)\nelse:\n    print(False)",
+        "detail": "Python.BasicProblems.PalindromeNumber",
+        "documentation": {}
+    },
+    {
+        "label": "factorial",
+        "kind": 2,
+        "importPath": "Python.Recursion.factorial",
+        "description": "Python.Recursion.factorial",
+        "peekOfCode": "def factorial(n):\n    # Step 3 \n    assert n >=0 and int(n) == n, \"The number must be positive integer only!\"\n    # Step 2\n    if n in [0,1]:\n        return 1\n    # Step 1\n    return n * factorial(n-1)\nprint(factorial(-1))",
+        "detail": "Python.Recursion.factorial",
+        "documentation": {}
+    },
+    {
+        "label": "fibonacci",
+        "kind": 2,
+        "importPath": "Python.Recursion.fibonacci",
+        "description": "Python.Recursion.fibonacci",
+        "peekOfCode": "def fibonacci(n):\n    assert 0 <= n == int(n), \"The number must be positive integer only!\"\n    if n in [0, 1]:\n        return n\n    else:\n        return fibonacci(n - 1) + fibonacci(n - 2)\nprint(fibonacci(6))",
+        "detail": "Python.Recursion.fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "power",
+        "kind": 2,
+        "importPath": "Python.Recursion.power_of_number",
+        "description": "Python.Recursion.power_of_number",
+        "peekOfCode": "def power(base, exp):\n    if exp <0 or exp != int(exp):\n        return \"Exponent must be a positive integer\"\n    else:\n        if exp == 0:\n            return 1\n        if exp == 1:\n            return base\n        return base * power(base, exp - 1)\nprint(power(2, 4))",
+        "detail": "Python.Recursion.power_of_number",
+        "documentation": {}
+    },
+    {
+        "label": "recursiveMethod",
+        "kind": 2,
+        "importPath": "Python.Recursion.recursion",
+        "description": "Python.Recursion.recursion",
+        "peekOfCode": "def recursiveMethod(n):\n    if n<1:\n        print(\"N is less than 1\")\n    else:\n        recursiveMethod(n-1)\n        print(n)\nrecursiveMethod(4)",
+        "detail": "Python.Recursion.recursion",
+        "documentation": {}
+    },
+    {
+        "label": "sum_of_positive_int_number",
+        "kind": 2,
+        "importPath": "Python.Recursion.sum_of_digits",
+        "description": "Python.Recursion.sum_of_digits",
+        "peekOfCode": "def sum_of_positive_int_number(number):\n    if number < 0 or number != int(number):\n        return \"Number must be a positive integer\"\n    if number == 0:\n        return 0\n    return int(number % 10) + sum_of_positive_int_number(int(number / 10))\nprint(sum_of_positive_int_number(11111111))",
+        "detail": "Python.Recursion.sum_of_digits",
+        "documentation": {}
+    },
+    {
+        "label": "array",
+        "kind": 5,
+        "importPath": "Python.array",
+        "description": "Python.array",
+        "peekOfCode": "array = [11, 20, 30, 40.5, 50]\n# random indexing ---> O(1) get items if we know the index !!!\n# print(array[0])\n# array[0] = 'Touhid'\n# print(array[0])\n# for i in array:\n#     print(i)\n# for i in range(len(array)):\n#     print(array[i])\n# print(array[0:2])",
+        "detail": "Python.array",
+        "documentation": {}
+    },
+    {
+        "label": "maximum",
+        "kind": 5,
+        "importPath": "Python.array",
+        "description": "Python.array",
+        "peekOfCode": "maximum = array[0]\nfor i in array:\n    if i > maximum:\n        maximum = i\nprint(maximum)",
+        "detail": "Python.array",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "Python.Single_Linked_List",
+        "description": "Python.Single_Linked_List",
+        "peekOfCode": "class Node:\n    def __init__(self, value):\n        self.info = value\n        self.link = None\nclass SingleLinkedList:\n    def __init__(self):\n        self.start = None\n    def display_list(self):  # for displaying the list\n        if self.start is None:\n            print(\"List is empty\")",
+        "detail": "Python.Single_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "SingleLinkedList",
+        "kind": 6,
+        "importPath": "Python.Single_Linked_List",
+        "description": "Python.Single_Linked_List",
+        "peekOfCode": "class SingleLinkedList:\n    def __init__(self):\n        self.start = None\n    def display_list(self):  # for displaying the list\n        if self.start is None:\n            print(\"List is empty\")\n            return\n        else:\n            print(\"List is :   \")\n            p = self.start",
+        "detail": "Python.Single_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "kind": 5,
+        "importPath": "Python.Single_Linked_List",
+        "description": "Python.Single_Linked_List",
+        "peekOfCode": "List = SingleLinkedList()\nList.create_list()\nwhile True:\n    print(\"-----------------------------------------\")\n    print(\"1. Display List\")\n    print(\"2. Count The Number Of Nodes\")\n    print(\"3. Search For An Element\")\n    print(\"4. Insert in the beginning of the list\")\n    print(\"5. Insert a node at the end of the list\")\n    print(\"6. Insert a node after a specified node\")",
+        "detail": "Python.Single_Linked_List",
+        "documentation": {}
+    }
+]
