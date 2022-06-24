@@ -63,24 +63,6 @@
         "documentation": {}
     },
     {
-        "label": "array",
-        "kind": 5,
-        "importPath": "Python.array",
-        "description": "Python.array",
-        "peekOfCode": "array = [11, 20, 30, 40.5, 50]\n# random indexing ---> O(1) get items if we know the index !!!\n# print(array[0])\n# array[0] = 'Touhid'\n# print(array[0])\n# for i in array:\n#     print(i)\n# for i in range(len(array)):\n#     print(array[i])\n# print(array[0:2])",
-        "detail": "Python.array",
-        "documentation": {}
-    },
-    {
-        "label": "maximum",
-        "kind": 5,
-        "importPath": "Python.array",
-        "description": "Python.array",
-        "peekOfCode": "maximum = array[0]\nfor i in array:\n    if i > maximum:\n        maximum = i\nprint(maximum)",
-        "detail": "Python.array",
-        "documentation": {}
-    },
-    {
         "label": "Node",
         "kind": 6,
         "importPath": "Python.Single_Linked_List",
@@ -105,6 +87,24 @@
         "description": "Python.Single_Linked_List",
         "peekOfCode": "List = SingleLinkedList()\nList.create_list()\nwhile True:\n    print(\"-----------------------------------------\")\n    print(\"1. Display List\")\n    print(\"2. Count The Number Of Nodes\")\n    print(\"3. Search For An Element\")\n    print(\"4. Insert in the beginning of the list\")\n    print(\"5. Insert a node at the end of the list\")\n    print(\"6. Insert a node after a specified node\")",
         "detail": "Python.Single_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "array",
+        "kind": 5,
+        "importPath": "Python.array",
+        "description": "Python.array",
+        "peekOfCode": "array = [11, 20, 30, 40.5, 50]\n# random indexing ---> O(1) get items if we know the index !!!\n# print(array[0])\n# array[0] = 'Touhid'\n# print(array[0])\n# for i in array:\n#     print(i)\n# for i in range(len(array)):\n#     print(array[i])\n# print(array[0:2])",
+        "detail": "Python.array",
+        "documentation": {}
+    },
+    {
+        "label": "maximum",
+        "kind": 5,
+        "importPath": "Python.array",
+        "description": "Python.array",
+        "peekOfCode": "maximum = array[0]\nfor i in array:\n    if i > maximum:\n        maximum = i\nprint(maximum)",
+        "detail": "Python.array",
         "documentation": {}
     }
 ]
